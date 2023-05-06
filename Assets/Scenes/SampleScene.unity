@@ -792,10 +792,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 326320552}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 40928ecce24916f48934d17bf190ee77, type: 3}
+  m_Script: {fileID: 11500000, guid: b7817a4d6ca61bc4bb4678d327090374, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  menuName: find menu
+  menuName: find room
   open: 0
 --- !u!1 &348697151
 GameObject:
@@ -2037,7 +2037,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1067762062}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 40928ecce24916f48934d17bf190ee77, type: 3}
+  m_Script: {fileID: 11500000, guid: b7817a4d6ca61bc4bb4678d327090374, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   menuName: create room
@@ -2223,7 +2223,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1205619748}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 40928ecce24916f48934d17bf190ee77, type: 3}
+  m_Script: {fileID: 11500000, guid: b7817a4d6ca61bc4bb4678d327090374, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   menuName: loading
@@ -2936,6 +2936,73 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1681935812}
   m_CullTransparentMesh: 1
+--- !u!1 &1809517790
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1809517793}
+  - component: {fileID: 1809517792}
+  - component: {fileID: 1809517794}
+  m_Layer: 0
+  m_Name: RoomManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1809517792
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1809517790}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa584fbee541324448dd18d8409c7a41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ObservedComponentsFoldoutOpen: 1
+  Group: 0
+  prefixField: -1
+  Synchronization: 3
+  OwnershipTransfer: 0
+  observableSearch: 2
+  ObservedComponents: []
+  sceneViewId: 999
+  InstantiationId: 0
+  isRuntimeInstantiated: 0
+--- !u!4 &1809517793
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1809517790}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 249.7342, y: 146.85678, z: -2.0730178}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1809517794
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1809517790}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 13167d27f6f738145bd1ead55b4cde36, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1873418687
 GameObject:
   m_ObjectHideFlags: 0
@@ -2986,7 +3053,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1873418687}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 40928ecce24916f48934d17bf190ee77, type: 3}
+  m_Script: {fileID: 11500000, guid: b7817a4d6ca61bc4bb4678d327090374, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   menuName: room
@@ -3038,7 +3105,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1911792877}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 40928ecce24916f48934d17bf190ee77, type: 3}
+  m_Script: {fileID: 11500000, guid: b7817a4d6ca61bc4bb4678d327090374, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   menuName: title
