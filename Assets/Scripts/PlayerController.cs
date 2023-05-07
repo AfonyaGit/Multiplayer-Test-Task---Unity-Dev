@@ -1,6 +1,10 @@
+﻿using Photon.Pun;
+using Photon.Realtime;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
+using UnityEngine.UI;
 
 public class PlayerController : MonoBehaviour
 {
@@ -8,22 +12,37 @@ public class PlayerController : MonoBehaviour
 	public Joystick joystick;
 
 	public float speed;
-	public int health;
+	const int maxHealth=10;
+	public int currentHealth = maxHealth;
+	public TMP_Text healthDisplay;
 
 	public enum ControlType{PC,Android};
 
 	private Rigidbody2D rb;
+	private PhotonView PV;
+	private PlayerManager playerManager;
 	private Vector2 moveInput;
 	private Vector2 moveVelocity;
-	// Start is called before the first frame update
-	void Start()
+	
+	void  Awake()
 	{
 		rb = GetComponent<Rigidbody2D>();
+		PV = GetComponent<PhotonView>();
 	}
 
-	// Update is called once per frame
+	void Start()
+	{
+		if (!PV.IsMine)
+			{
+			Destroy(GetComponentInChildren<Joystick>().gameObject);
+			}
+		
+	}
+
 	void Update()
 	{
+		if (!PV.IsMine)
+			return;
 		Move();
 	}
 	void Move()
@@ -43,8 +62,27 @@ public class PlayerController : MonoBehaviour
 		rb.MovePosition(rb.position + moveVelocity * Time.fixedDeltaTime);
 	}
 
-	public void ChangeHealth(int healthValue)
+		public void TakeDamage(int damage)
 	{
-		health += healthValue;
+		PV.RPC(nameof(RPC_TakeDamage), PV.Owner, damage);
+	}
+
+	[PunRPC]
+	void RPC_TakeDamage(int damage, PhotonMessageInfo info)
+	{
+		currentHealth -= damage;
+
+		healthDisplay.text = "HP: " + currentHealth;
+
+		if(currentHealth <= 0)
+		{
+			Die();
+			//PlayerManager.Find(info.Sender).GetKill();
+		}
+	}
+
+	void Die()
+	{
+		playerManager.Die();
 	}
 }
